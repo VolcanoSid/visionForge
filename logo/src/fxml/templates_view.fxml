@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.TemplatesController"
+            prefHeight="550.0" prefWidth="800.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f3f4f6, #e0e7ef);">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16">
+            <padding>
+                <Insets top="24" right="24" bottom="24" left="24"/>
+            </padding>
+            <Label text="Templates" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Browse and preview available templates."
+                   style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+            <TilePane fx:id="templateTilePane" hgap="18" vgap="18" prefColumns="3" alignment="TOP_CENTER"/>
+            <Label fx:id="templateStatusLabel" text="" style="-fx-font-size: 13px; -fx-text-fill: #e57373;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

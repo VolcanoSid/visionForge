@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.PhotoEditorController"
+            prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: linear-gradient(to top right, #f8fafc, #c7d2fe);">
+
+   	<top>
+      	<HBox alignment="CENTER_LEFT" spacing="16">
+   			 <padding>
+     				   <Insets top="24" right="24" bottom="24" left="24"/>
+   			 </padding>
+            <Label text="Photo Editor"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222;"/>
+        </HBox>
+    </top>
+
+    <center>
+			<HBox spacing="28" alignment="CENTER">
+			    <padding>
+			        <Insets top="30" right="30" bottom="30" left="30"/>
+			    </padding>
+            <!-- Image Display Area -->
+            <VBox alignment="CENTER" spacing="14">
+                <ImageView fx:id="imageView" fitWidth="320" fitHeight="280"
+                           style="-fx-effect: dropshadow(gaussian, #aaa, 10, 0, 0, 2);"
+                           preserveRatio="true"/>
+                <HBox spacing="8">
+                    <Button text="Open Image" onAction="#handleOpenImage"/>
+                    <Button text="Save Image" onAction="#handleSaveImage"/>
+                </HBox>
+            </VBox>
+
+            <!-- Editing Tools -->
+            <VBox spacing="18" alignment="TOP_LEFT" style="-fx-background-color: #f3f6fd; -fx-background-radius: 14; -fx-padding: 18;">
+                <Label text="Adjustments" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Label text="Brightness"/>
+                    <Slider fx:id="brightnessSlider" min="0.5" max="1.5" value="1.0" prefWidth="120"/>
+                </HBox>
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Label text="Contrast"/>
+                    <Slider fx:id="contrastSlider" min="0.5" max="1.5" value="1.0" prefWidth="120"/>
+                </HBox>
+
+                <!-- 🎨 Effect Selector -->
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Label text="Effect"/>
+                    <ComboBox fx:id="effectSelector" prefWidth="150" promptText="Select Effect" />
+                </HBox>
+
+                <Button text="Apply Filter" onAction="#handleApplyFilter" style="-fx-background-radius: 8;"/>
+                <Button text="Reset" onAction="#handleReset" style="-fx-background-radius: 8;"/>
+
+                <!-- Undo/Redo Buttons -->
+                <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                    <Button text="Undo" onAction="#handleUndo" style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+                    <Button text="Redo" onAction="#handleRedo" style="-fx-background-radius: 8; -fx-background-color: #6ee7b7; -fx-text-fill: #222;"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

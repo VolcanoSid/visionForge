@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.ExploreController"
+            prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: linear-gradient(to top right, #f1f5f9, #e0e7ef);">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16" padding="24">
+            <Label text="Explore Projects & Resources"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #334155;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222222;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" padding="32">
+            <!-- Search Bar -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Search projects, templates, resources..." prefWidth="320"
+                           style="-fx-background-radius: 8;"/>
+                <Button text="Search" onAction="#handleSearch"
+                        style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+            </HBox>
+            
+            <!-- Trending/Recommended Cards -->
+            <HBox spacing="24" alignment="CENTER">
+                <!-- Card 1 -->
+                <VBox style="-fx-background-radius: 16; -fx-background-color: white; -fx-padding: 18; -fx-effect: dropshadow(gaussian, #dde6ed, 8, 0, 0, 2);"
+                      alignment="CENTER" spacing="12" prefWidth="200">
+                    <ImageView fitHeight="54" fitWidth="54">
+                        <image>
+                            <Image url="@/images/trending1.png"/>
+                        </image>
+                    </ImageView>
+                    <Label text="Template Library" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+                    <Button text="Browse" onAction="#handleBrowseTemplates"
+                            style="-fx-background-radius: 8; -fx-background-color: #6366f1; -fx-text-fill: white;"/>
+                </VBox>
+                <!-- Card 2 -->
+                <VBox style="-fx-background-radius: 16; -fx-background-color: white; -fx-padding: 18; -fx-effect: dropshadow(gaussian, #dde6ed, 8, 0, 0, 2);"
+                      alignment="CENTER" spacing="12" prefWidth="200">
+                    <ImageView fitHeight="54" fitWidth="54">
+                        <image>
+                            <Image url="@/images/trending2.png"/>
+                        </image>
+                    </ImageView>
+                    <Label text="Recent Projects" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+                    <Button text="Open" onAction="#handleOpenRecent"
+                            style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+                </VBox>
+                <!-- Card 3 -->
+                <VBox style="-fx-background-radius: 16; -fx-background-color: white; -fx-padding: 18; -fx-effect: dropshadow(gaussian, #dde6ed, 8, 0, 0, 2);"
+                      alignment="CENTER" spacing="12" prefWidth="200">
+                    <ImageView fitHeight="54" fitWidth="54">
+                        <image>
+                            <Image url="@/images/trending3.png"/>
+                        </image>
+                    </ImageView>
+                    <Label text="Resource Hub" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+                    <Button text="Learn More" onAction="#handleResourceHub"
+                            style="-fx-background-radius: 8; -fx-background-color: #6ee7b7; -fx-text-fill: #222;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

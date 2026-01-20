@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<HBox fx:id="headerBar" alignment="CENTER_LEFT" spacing="16"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="application.controller.HeaderBarController"
+      style="-fx-background-color: #20232a; -fx-padding: 12 24;">
+    <ImageView fx:id="logo" fitHeight="32" fitWidth="32"/>
+    <Label fx:id="appName" text="VisionForge" style="-fx-text-fill: white; -fx-font-size: 18px;"/>
+    <TextField fx:id="searchBar" promptText="Search..." style="-fx-background-radius: 8;"/>
+    <HBox alignment="CENTER_RIGHT" spacing="8" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+        <Label fx:id="profileName" text="User"/>
+        <ImageView fx:id="profilePic" fitHeight="32" fitWidth="32"/>
+    </HBox>
+</HBox>

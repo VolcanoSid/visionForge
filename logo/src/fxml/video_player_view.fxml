@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.VideoPlayerController"
+            prefHeight="520.0" prefWidth="860.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f3f4f6, #e0e7ef);">
+
+    <top>
+		<HBox alignment="CENTER_LEFT" spacing="16">
+		    <padding>
+		        <Insets top="24" right="24" bottom="24" left="24"/>
+		    </padding>
+            <Label text="Video Player" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="28">
+            <MediaView fx:id="mediaView" fitHeight="320" fitWidth="600"/>
+            <HBox spacing="14" alignment="CENTER">
+                <Button text="Open Video" onAction="#handleOpenVideo"
+                        style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+                <Button text="Play" onAction="#handlePlay"
+                        style="-fx-background-radius: 8; -fx-background-color: #6ee7b7; -fx-text-fill: #222;"/>
+                <Button text="Pause" onAction="#handlePause"
+                        style="-fx-background-radius: 8; -fx-background-color: #6366f1; -fx-text-fill: white;"/>
+                <Button text="Stop" onAction="#handleStop"
+                        style="-fx-background-radius: 8; -fx-background-color: #e57373; -fx-text-fill: white;"/>
+            </HBox>
+            <Label fx:id="videoStatusLabel" text="" style="-fx-font-size: 14px;"/>
+        </VBox>
+    </center>
+</BorderPane>

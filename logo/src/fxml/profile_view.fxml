@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.ProfileController"
+            prefWidth="800.0" prefHeight="600.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #eef2ff);">
+
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16"
+              style="-fx-background-color: #1e293b; -fx-padding: 12 24;">
+            <children>
+                <Label text="👤 User Profile"
+                       style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button text="⬅ Back" onAction="#handleBack"
+                        style="-fx-background-color: #fbbf24; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 6;" />
+                <Button text="🚪 Logout" onAction="#handleLogout"
+                        style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6;" />
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+
+            <!-- Profile Picture -->
+            <ImageView fx:id="profileImageView"
+                       fitWidth="120" fitHeight="120"
+                       preserveRatio="true"
+                       style="-fx-background-color: #e2e8f0; -fx-border-radius: 10; -fx-background-radius: 10;" />
+
+            <Button text="Change Photo" onAction="#handleChangePhoto"
+                    style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+            <!-- Profile Information Fields -->
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <padding>
+                    <Insets top="10" right="20" bottom="10" left="20"/>
+                </padding>
+                <children>
+                    <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                           style="-fx-font-weight: bold; -fx-text-fill: #1e293b;" />
+                    <TextField fx:id="nameField"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"
+                               editable="false" prefWidth="240" />
+
+                    <Label text="Username:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                           style="-fx-font-weight: bold; -fx-text-fill: #1e293b;" />
+                    <TextField fx:id="usernameField"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"
+                               editable="false" prefWidth="240" />
+
+                    <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                           style="-fx-font-weight: bold; -fx-text-fill: #1e293b;" />
+                    <TextField fx:id="emailField"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"
+                               editable="false" prefWidth="240" />
+                </children>
+            </GridPane>
+
+            <!-- Save Button + Status -->
+            <Button text="Save" onAction="#handleSave"
+                    style="-fx-background-radius: 8; -fx-background-color: #059669; -fx-text-fill: white; -fx-font-weight: bold;" />
+            <Label fx:id="statusLabel"
+                   text=""
+                   style="-fx-font-size: 13px; -fx-text-fill: #059669;" />
+        </VBox>
+    </center>
+</BorderPane>

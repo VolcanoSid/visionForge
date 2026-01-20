@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.SettingsGeneralController"
+            prefWidth="420.0" prefHeight="460.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f3f4f6, #e0e7ef);">
+
+    <children>
+        <VBox layoutX="24" layoutY="18" spacing="18">
+
+            <Label text="General Settings"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+
+            <!-- Theme & Display -->
+            <Label text="Theme &amp; Display" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <CheckBox fx:id="themeToggle" text="Dark Mode" onAction="#handleThemeSwitch"/>
+                <Label text="Font Size:"/>
+                <Slider fx:id="fontSizeSlider" min="10" max="32" value="16"
+                        prefWidth="100" onMouseReleased="#handleFontSize"/>
+                <Label fx:id="fontSizeValueLabel" text="16px"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Accent Color:"/>
+                <ColorPicker fx:id="accentColorPicker" onAction="#handleAccentColor"/>
+            </HBox>
+
+            <!-- Startup & Session -->
+            <Label text="Startup &amp; Session" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <Label text="Startup Screen:"/>
+                <ChoiceBox fx:id="startupScreenChoice" prefWidth="140"/>
+            </HBox>
+            <HBox spacing="10">
+                <CheckBox fx:id="restoreSessionToggle" text="Restore Last Session"/>
+            </HBox>
+
+            <!-- Recent Projects -->
+            <Label text="Recent Projects" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <Label text="Show:"/>
+                <Spinner fx:id="recentProjectsSpinner" min="3" max="20"
+                         initialValue="5" prefWidth="60"/>
+                <Label text="recent projects on Dashboard"/>
+            </HBox>
+
+            <!-- Guest Mode -->
+            <HBox spacing="10">
+                <Button text="Enter Guest Mode" fx:id="guestModeBtn"
+                        onAction="#handleGuestMode"
+                        style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222;"/>
+                <Label text="(no changes will be saved)"
+                       style="-fx-font-size: 11px; -fx-text-fill: #e57373;"/>
+            </HBox>
+
+            <!-- Save / Back -->
+            <HBox spacing="10">
+                <Button text="Save Settings" onAction="#handleSave"
+                        style="-fx-background-radius: 8; -fx-background-color: #6ee7b7; -fx-text-fill: #222;"/>
+                <Button text="Back to Dashboard" onAction="#handleBack"
+                        style="-fx-background-radius: 8; -fx-background-color: #bdbdbd; -fx-text-fill: #333;"/>
+                <Label fx:id="statusLabel" text=""
+                       style="-fx-font-size: 13px; -fx-text-fill: #e57373;"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

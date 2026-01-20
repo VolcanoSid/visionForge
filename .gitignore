@@ -1,0 +1,15 @@
+bin/
+target/
+build/
+out/
+.idea/
+.settings/
+*.iml
+*.class
+*.log
+*.mv.db
+*.trace.db
+*.lock.db
+.DS_Store
+Thumbs.db
+.env

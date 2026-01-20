@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.ImageViewPane"
+            prefHeight="480.0" prefWidth="780.0"
+            style="-fx-background-color: linear-gradient(to top right, #f8fafc, #e0e7ef);">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="14" padding="20">
+            <Label text="Image Viewer" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="24">
+            <ImageView fx:id="mainImageView" fitHeight="320" fitWidth="440" preserveRatio="true"
+                       style="-fx-effect: dropshadow(gaussian, #bbb, 14, 0, 0, 3);"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Open Image" onAction="#handleOpenImage"
+                        style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+                <Button text="Save As" onAction="#handleSaveAs"
+                        style="-fx-background-radius: 8; -fx-background-color: #6ee7b7; -fx-text-fill: #222;"/>
+            </HBox>
+            <Label fx:id="imageInfoLabel" text="" style="-fx-font-size: 13px;"/>
+        </VBox>
+    </center>
+</BorderPane>

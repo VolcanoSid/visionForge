@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.LabelView"
+            prefHeight="420.0" prefWidth="720.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ef);">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16" padding="22">
+            <Label text="Labels" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" padding="38">
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <TextField fx:id="labelField" promptText="Enter new label..." prefWidth="180"/>
+                <Button text="Add Label" onAction="#handleAddLabel"
+                        style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+                <Label fx:id="addStatusLabel" text="" style="-fx-font-size: 13px;"/>
+            </HBox>
+            <ListView fx:id="labelListView" prefHeight="220"/>
+            <Button text="Remove Selected" onAction="#handleRemoveLabel"
+                    style="-fx-background-radius: 8; -fx-background-color: #e57373; -fx-text-fill: white;"/>
+        </VBox>
+    </center>
+</BorderPane>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.LabelView"
+            prefHeight="420.0" prefWidth="720.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ef);">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16" padding="22">
+            <Label text="Labels" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"
+                    style="-fx-background-radius: 8; -fx-background-color: #fbbf24; -fx-text-fill: #222;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" padding="38">
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <TextField fx:id="labelField" promptText="Enter new label..." prefWidth="180"/>
+                <Button text="Add Label" onAction="#handleAddLabel"
+                        style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+                <Label fx:id="addStatusLabel" text="" style="-fx-font-size: 13px;"/>
+            </HBox>
+            <ListView fx:id="labelListView" prefHeight="220"/>
+            <Button text="Remove Selected" onAction="#handleRemoveLabel"
+                    style="-fx-background-radius: 8; -fx-background-color: #e57373; -fx-text-fill: white;"/>
+        </VBox>
+    </center>
+</BorderPane>

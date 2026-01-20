@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<HBox fx:id="footerBar" alignment="CENTER" spacing="16" style="-fx-background-color: #222; -fx-padding: 8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.FooterBarController">
+    <Label style="-fx-text-fill: #bbb;" text="© 2025 VisionForge | v1.0" textFill="#08a6ef" />
+</HBox>

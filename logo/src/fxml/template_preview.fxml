@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.TemplatePreviewController"
+            prefWidth="420.0" prefHeight="300.0"
+            style="-fx-background-color: white; -fx-border-radius: 14; -fx-background-radius: 14;">
+
+    <top>
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets top="14" right="14" bottom="8" left="14"/>
+            </padding>
+            <Label fx:id="templateNameLabel"
+                   text="Template Name"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2563eb;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="8" right="14" bottom="8" left="14"/>
+            </padding>
+            <ImageView fx:id="templateImageView" fitWidth="360.0" fitHeight="180.0" preserveRatio="true"/>
+            <Label fx:id="templateDescLabel"
+                   text="Template description goes here."
+                   wrapText="true"
+                   style="-fx-font-size: 14px; -fx-text-fill: #334155;"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="8" right="14" bottom="14" left="14"/>
+            </padding>
+            <Button text="Use Template" onAction="#handleUseTemplate"
+                    style="-fx-background-radius: 8; -fx-background-color: #38bdf8; -fx-text-fill: white;"/>
+            <Button text="Close" onAction="#handleClose"
+                    style="-fx-background-radius: 8; -fx-background-color: #e57373; -fx-text-fill: white;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,19 @@
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #1e1e1e;
+    -fx-base: #222;
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-background-color: #444;
+    -fx-border-color: #666;
+    -fx-text-fill: #fff;
+}
+
+.label, .check-box {
+    -fx-text-fill: #fff;
+}

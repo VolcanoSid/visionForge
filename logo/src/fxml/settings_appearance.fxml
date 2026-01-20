@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.SettingsAppearanceController"
+            prefWidth="420.0" prefHeight="460.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f9fafb, #e5e7eb);">
+
+    <children>
+        <VBox spacing="18" layoutX="25" layoutY="18">
+
+            <Label text="Appearance Settings"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1d3557;"/>
+
+            <!-- Auto Theme -->
+            <Label text="Theme Automation" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <CheckBox fx:id="autoThemeToggle" text="Enable Auto Theme (Day/Night)"
+                          onAction="#handleAutoThemeToggle"/>
+                <Label fx:id="autoThemeStatus" text="" style="-fx-text-fill: #6b7280;"/>
+            </HBox>
+
+            <!-- Font Family -->
+            <Label text="Font Family" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <ChoiceBox fx:id="fontFamilyChoice" prefWidth="180"/>
+                <Button text="Apply Font" onAction="#handleApplyFont"
+                        style="-fx-background-color: #93c5fd; -fx-text-fill: white; -fx-background-radius: 6;"/>
+            </HBox>
+
+            <!-- UI Density -->
+            <Label text="UI Density" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <RadioButton fx:id="compactMode" text="Compact"/>
+                <RadioButton fx:id="comfortableMode" text="Comfortable"/>
+            </HBox>
+
+            <!-- Accent Presets -->
+            <Label text="Accent Presets" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <ColorPicker fx:id="accentPresetPicker" onAction="#handleAccentPresetChange"/>
+                <Button text="Reset Accent" onAction="#handleResetAccent"
+                        style="-fx-background-color: #f87171; -fx-text-fill: white; -fx-background-radius: 6;"/>
+            </HBox>
+
+            <!-- Preview Mode -->
+            <Label text="Theme Preview" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <ToggleButton fx:id="livePreviewToggle" text="Live Preview"
+                              onAction="#handleLivePreviewToggle"
+                              style="-fx-background-color: #6ee7b7; -fx-text-fill: #222; -fx-background-radius: 8;"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Save Appearance Settings" onAction="#handleSave"
+                        style="-fx-background-color: #34d399; -fx-text-fill: #fff; -fx-background-radius: 8;"/>
+                <Label fx:id="statusLabel" text="" style="-fx-font-size: 13px; -fx-text-fill: #6b7280;"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

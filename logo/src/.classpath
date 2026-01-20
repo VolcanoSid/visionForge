@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="extension/|model/|util/|application/controller/" kind="src" path=""/>
+	<classpathentry kind="src" path="application/controller"/>
+	<classpathentry kind="src" path="extension"/>
+	<classpathentry kind="src" path="model"/>
+	<classpathentry kind="src" path="util"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/javafx.base.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/javafx.media.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/javafx-swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/jdk.jsobject.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/jfx.incubator.input.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/OneDrive/Desktop/javafx-sdk-24.0.1/lib/jfx.incubator.richtext.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/javalib/jna-5.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/javalib/vlcj-4.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Assus/javalib/vlcj-javafx-1.2.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
